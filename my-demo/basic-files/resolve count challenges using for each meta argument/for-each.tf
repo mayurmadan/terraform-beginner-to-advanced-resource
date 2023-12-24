@@ -5,7 +5,7 @@ provider "aws" {
 #https://developer.hashicorp.com/terraform/language/meta-arguments/for_each
 
 #example for IAm
-#here 3 iam user created with name user-01 , user-02 & user-02
+#here 3 iam user created with name user-01 , user-02 & user-03
 resource "aws_iam_user" "iam" {
   # here data type is list & convert into set (remove duplicate) & used the "for each" here the provide count & name
   for_each = toset( ["user-01","user-02", "user-03","user-02"] )
